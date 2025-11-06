@@ -1,0 +1,191 @@
+/* ======= InfoHub – Light, Pastel Card Theme ======= */
+:root {
+  --bg-gradient: linear-gradient(135deg, #0a0f1f, #111827);
+  --muted: #cbd5e1;
+  --error-bg: rgba(127, 29, 29, 0.6);
+
+  /* Lightened Card Gradients */
+  --weather-start: #93c5fd;
+  --weather-end: #c4b5fd;
+  --currency-start: #6ee7b7;
+  --currency-end: #34d399;
+  --quote-start: #fde68a;
+  --quote-end: #fbbf24;
+}
+
+/* ===== Base Layout ===== */
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg-gradient);
+  color: #f3f4f6;
+  margin: 0;
+  padding: 40px 24px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== Header ===== */
+.center-header {
+  text-align: center;
+  margin-bottom: 50px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.center-header h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #3b82f6; /* blue heading */
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
+  margin-bottom: 12px;
+}
+
+.center-header .subtitle {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* ===== Module Layout ===== */
+.module-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  animation: fadeUp 0.8s ease-in-out;
+}
+
+/* ===== Card Base ===== */
+.module-card {
+  flex: 1 1 300px;
+  max-width: 340px;
+  border-radius: 18px;
+  padding: 24px 26px;
+  color: #1f2937;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== Light Pastel Gradients ===== */
+.module-weather {
+  background: linear-gradient(160deg, var(--weather-start), var(--weather-end));
+  box-shadow: 0 0 25px rgba(147, 197, 253, 0.25);
+  color: #1e3a8a;
+}
+
+.module-currency {
+  background: linear-gradient(160deg, var(--currency-start), var(--currency-end));
+  box-shadow: 0 0 25px rgba(110, 231, 183, 0.25);
+  color: #064e3b;
+}
+
+.module-quote {
+  background: linear-gradient(160deg, var(--quote-start), var(--quote-end));
+  box-shadow: 0 0 25px rgba(251, 191, 36, 0.25);
+  color: #78350f;
+}
+
+/* ===== Card Header ===== */
+.module-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.module-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.module-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.small {
+  color: #1e293b;
+  font-size: 0.9rem;
+}
+
+/* ===== Input & Buttons ===== */
+.input, .btn {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.4);
+  color: #1f2937;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn {
+  background: rgba(255, 255, 255, 0.45);
+  color: #1f2937;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* ===== Error & Loading ===== */
+.error {
+  color: #b91c1c;
+  background: #fee2e2;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.loading {
+  color: #334155;
+  opacity: 0.9;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 960px) {
+  .center-header h1 { font-size: 2.6rem; }
+  .module-row { gap: 22px; }
+}
+
+@media (max-width: 640px) {
+  .module-row { flex-direction: column; align-items: center; }
+  .module-card { max-width: 90%; }
+}
